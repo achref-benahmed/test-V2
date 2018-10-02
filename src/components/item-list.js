@@ -10,6 +10,8 @@ constructor() {
   }
 }
 
+
+
   componentDidMount () {
     this.getItems();
   }
@@ -18,9 +20,12 @@ constructor() {
     fetch('https://api.fitogram.pro/providers/yogashop/events/public?from=2018-09-26T22%3A39%3A22.480Z')
         .then(results => results.json())
         .then(results => this.setState({'items': results}));
+
   }
 
+
   render (){
+
     return (
       <div> {this.state.items.map(function(item ){
 
@@ -71,5 +76,5 @@ constructor() {
       </div>
             );
         }
-        
+
 }
